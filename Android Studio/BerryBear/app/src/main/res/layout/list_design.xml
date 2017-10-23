@@ -6,7 +6,6 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal"
     android:weightSum="1">
-
     <TextView
         android:id="@+id/items"
         android:layout_width="wrap_content"
@@ -15,15 +14,17 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:onClick="onItemClickListener"
+        android:layout_marginLeft="20dp"
         android:paddingTop="5dp"
         android:textSize="20sp"
         tools:text="Program name" />
 
     <ImageButton
         android:id="@+id/run"
-        android:layout_width="50dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:src="@mipmap/ic_run"
         android:layout_marginRight="6dp"
         android:onClick="onRunButtonClickListener"
         app:srcCompat="@mipmap/ic_run" />

@@ -47,7 +47,8 @@
         android:layout_height="50dp"
         android:layout_above="@+id/Right"
         android:layout_centerHorizontal="true"
-        tools:layout_editor_absoluteY="178dp"
-        tools:layout_editor_absoluteX="167dp" />
+        android:elevation="0dp"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="178dp" />
 
 </RelativeLayout>

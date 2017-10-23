@@ -44,7 +44,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ImageButton Up = (ImageButton) findViewById(R.id.Up);
+        final ImageButton Up = (ImageButton) findViewById(R.id.Up);
         Up.setImageResource(R.mipmap.ic_up);
         ImageButton Down = (ImageButton) findViewById(R.id.Down);
         Down.setImageResource(R.mipmap.ic_down);
