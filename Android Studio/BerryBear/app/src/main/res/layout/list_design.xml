@@ -23,11 +23,11 @@
         android:id="@+id/run"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="center"
         android:src="@mipmap/ic_run"
+        android:background="#EEEEEE"
         android:layout_marginRight="6dp"
-        android:onClick="onRunButtonClickListener"
-        app:srcCompat="@mipmap/ic_run" />
+        android:onClick="onRunButtonClickListener" />
 
 
 </LinearLayout>

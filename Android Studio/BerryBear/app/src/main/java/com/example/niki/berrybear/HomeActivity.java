@@ -44,14 +44,10 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final ImageButton Up = (ImageButton) findViewById(R.id.Up);
-        Up.setImageResource(R.mipmap.ic_up);
+        ImageButton Up = (ImageButton) findViewById(R.id.Up);
         ImageButton Down = (ImageButton) findViewById(R.id.Down);
-        Down.setImageResource(R.mipmap.ic_down);
         ImageButton Right = (ImageButton) findViewById(R.id.Right);
-        Right.setImageResource(R.mipmap.ic_right);
         ImageButton Left = (ImageButton) findViewById(R.id.Left);
-        Left.setImageResource(R.mipmap.ic_left);
 
         Up.setOnClickListener(new View.OnClickListener() {
             @Override

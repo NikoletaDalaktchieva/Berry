@@ -11,6 +11,7 @@
 
     <ImageButton
         android:id="@+id/Down"
+        android:src="@mipmap/ic_down"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:longClickable="true"
@@ -23,6 +24,7 @@
 
     <ImageButton
         android:id="@+id/Right"
+        android:src="@mipmap/ic_right"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_above="@+id/Down"
@@ -32,9 +34,10 @@
         tools:layout_editor_absoluteX="217dp" />
 
     <ImageButton
+        android:id="@+id/Left"
+        android:src="@mipmap/ic_left"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/Left"
         android:layout_above="@+id/Down"
         android:layout_toLeftOf="@+id/Down"
         android:layout_toStartOf="@+id/Down"
@@ -43,6 +46,7 @@
 
     <ImageButton
         android:id="@+id/Up"
+        android:src="@mipmap/ic_up"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_above="@+id/Right"
