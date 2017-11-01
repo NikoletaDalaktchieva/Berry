@@ -8,21 +8,20 @@
     android:weightSum="1"
     android:gravity="center">
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/command"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/textView"
         android:layout_gravity="bottom"
         android:clickable="false"
-        tools:text="TextView" />
+        tools:text="TextView" /> -->
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/border"
         android:clickable="false"
         android:gravity="center"
         android:visibility="visible"

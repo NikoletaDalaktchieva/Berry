@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.niki.berrybear.NewProgramActivity">
+    android:orientation="vertical">
+
 
     <EditText
         android:id="@+id/title"
@@ -17,14 +17,38 @@
         tools:layout_editor_absoluteY="0dp"
        />
 
-    <ListView
-        android:id="@+id/commandList"
-        android:divider="@null"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="470dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="41dp"
+        tools:layout_editor_absoluteX="-6dp">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <ListView
+                android:id="@+id/sourcelist"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/targetlayout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/targetlist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

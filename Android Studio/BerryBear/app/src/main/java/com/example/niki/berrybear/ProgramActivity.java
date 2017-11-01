@@ -8,17 +8,36 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static com.example.niki.berrybear.R.id.items;
+import static com.example.niki.berrybear.R.id.textView;
 
 public class ProgramActivity extends ActionBarActivity {
 
     ListView icons ;
     ArrayList <Drawable> items ;
     Adapter adapter ;
-    public static int[] imageId;
+    public static int[] imageId  = new int[]{
+            R.mipmap.ic_up,
+            R.mipmap.ic_down,
+            R.mipmap.ic_left,
+            R.mipmap.ic_up
+
+    };
+
+    String[] comands ={
+            "Up",
+            "Down",
+            "Left",
+            "Right"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,21 +48,14 @@ public class ProgramActivity extends ActionBarActivity {
         //TODO: Get information and change title by name
 
 
-
-        imageId = new int[]{
-                R.mipmap.ic_up,
-                R.mipmap.ic_down,
-                R.mipmap.ic_left,
-                R.mipmap.ic_up
-
-        };
-
-
-
-        String[] str = new String[]{"5s", "1s", "10s", "1s"};
+        /*String[] str = new String[]{"5s", "1s", "10s", "1s"};
         ListView list = (ListView) findViewById(R.id.commandList);
         CustomList adapter = new CustomList(this, str, imageId);
-        list.setAdapter(adapter);
+        list.setAdapter(adapter);*/
+
+        ListView list = (ListView) findViewById(R.id.commandList);
+        list.setAdapter(new ArrayAdapter<String>(
+                this, R.layout.commands_list_design, textView, comands));
 
     }
 
