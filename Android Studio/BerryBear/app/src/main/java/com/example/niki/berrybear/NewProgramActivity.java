@@ -19,12 +19,16 @@ import android.view.View.DragShadowBuilder;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.niki.berrybear.R.id.list;
+import static com.example.niki.berrybear.R.id.textView;
 
 public class NewProgramActivity extends Activity {
 
@@ -40,6 +44,14 @@ public class NewProgramActivity extends Activity {
             "Right"
     };
 
+    public static int[] imageId  = new int[]{
+            R.mipmap.ic_up,
+            R.mipmap.ic_down,
+            R.mipmap.ic_left,
+            R.mipmap.ic_up
+
+    };
+
     List<String> droppedList;
     ArrayAdapter<String> droppedAdapter;
 
@@ -51,24 +63,26 @@ public class NewProgramActivity extends Activity {
         targetLayout = (LinearLayout)findViewById(R.id.targetlayout);
         listSource = (ListView)findViewById(R.id.sourcelist);
         listTarget = (ListView)findViewById(R.id.targetlist);
+        EditText name = (EditText) findViewById(R.id.title);
+        name.setText("Program");
 
-        // Create and set the tags for the Buttons
-        final String SOURCELIST_TAG = "listSource";
-        final String TARGETLIST_TAG = "listTarget";
-        final String TARGETLAYOUT_TAG = "targetLayout";
+        listSource.setAdapter(new ArrayAdapter<String>(
+                this, R.layout.commands_list_design, textView, comands));
+        /*String[] str = new String[]{"5s", "1s", "10s", "1s"};
+        listSource.setAdapter(new CustomList(this, str, imageId));*/
 
-        listSource.setTag(SOURCELIST_TAG);
-        listTarget.setTag(TARGETLIST_TAG);
-        targetLayout.setTag(TARGETLAYOUT_TAG);
 
-        listSource.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, comands));
+        listSource.setOnItemLongClickListener(listSourceItemLongClickListener);
         listSource.setOnItemLongClickListener(listSourceItemLongClickListener);
 
 
         droppedList = new ArrayList<String>();
-        droppedAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, droppedList);
+
+        //TODO: Send program name to database
+        //TODO: Get commands from database
+
+        droppedAdapter = new ArrayAdapter<String>(
+                this, R.layout.new_commands_list_design, textView, droppedList);
         listTarget.setAdapter(droppedAdapter);
 
         listSource.setOnDragListener(myDragEventListener);

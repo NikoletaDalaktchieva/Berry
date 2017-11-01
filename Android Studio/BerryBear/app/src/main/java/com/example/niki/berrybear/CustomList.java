@@ -26,10 +26,10 @@ public class CustomList extends ArrayAdapter<String> {
         View rowView= inflater.inflate(R.layout.commands_list_design, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.textView);
 
-        //ImageView imageView = (ImageView) rowView.findViewById(R.id.command);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.command);
         txtTitle.setText(web[position]);
 
-        //imageView.setImageResource(imageId[position]);
+        imageView.setImageResource(imageId[position]);
         return rowView;
     }
 }

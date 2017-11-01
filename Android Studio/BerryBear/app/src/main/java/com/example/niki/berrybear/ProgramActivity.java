@@ -48,14 +48,14 @@ public class ProgramActivity extends ActionBarActivity {
         //TODO: Get information and change title by name
 
 
-        /*String[] str = new String[]{"5s", "1s", "10s", "1s"};
+        String[] str = new String[]{"5s", "1s", "10s", "1s"};
         ListView list = (ListView) findViewById(R.id.commandList);
         CustomList adapter = new CustomList(this, str, imageId);
-        list.setAdapter(adapter);*/
+        list.setAdapter(adapter);
 
-        ListView list = (ListView) findViewById(R.id.commandList);
+        /*ListView list = (ListView) findViewById(R.id.commandList);
         list.setAdapter(new ArrayAdapter<String>(
-                this, R.layout.commands_list_design, textView, comands));
+                this, R.layout.commands_list_design, textView, comands));*/
 
     }
 
