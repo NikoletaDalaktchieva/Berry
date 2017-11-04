@@ -1,4 +1,4 @@
-package com.example.niki.berrybear;
+package com.example.niki.berrybear.Tabs;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.niki.berrybear.R;
 
 
 public class HomeActivity extends Activity {

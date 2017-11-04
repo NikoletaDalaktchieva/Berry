@@ -26,10 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".ListProgramsActivity" />
-        <activity android:name=".NewProgramActivity" />
-        <activity android:name=".ProgramActivity" />
+        <activity android:name=".Tabs.HomeActivity" />
+        <activity android:name=".Tabs.ListProgramsActivity" />
+        <activity android:name=".Programming.NewProgramActivity" />
+        <activity android:name=".Programming.ProgramActivity" />
     </application>
 
 </manifest>

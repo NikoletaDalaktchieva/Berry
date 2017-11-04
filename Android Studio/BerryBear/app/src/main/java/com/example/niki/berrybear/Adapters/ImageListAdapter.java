@@ -1,4 +1,4 @@
-package com.example.niki.berrybear;
+package com.example.niki.berrybear.Adapters;
 
 import android.content.Context;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.niki.berrybear.Programming.ProgramActivity;
 
 public class ImageListAdapter extends BaseAdapter {
     private Context mContext;

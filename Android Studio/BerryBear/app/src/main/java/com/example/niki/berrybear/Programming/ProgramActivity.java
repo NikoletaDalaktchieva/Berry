@@ -1,4 +1,4 @@
-package com.example.niki.berrybear;
+package com.example.niki.berrybear.Programming;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -8,15 +8,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Adapter;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.niki.berrybear.Adapters.CustomList;
+import com.example.niki.berrybear.R;
 
-import static com.example.niki.berrybear.R.id.items;
-import static com.example.niki.berrybear.R.id.textView;
+import java.util.ArrayList;
 
 public class ProgramActivity extends ActionBarActivity {
 

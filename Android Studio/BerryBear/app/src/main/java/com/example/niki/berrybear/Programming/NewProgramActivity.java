@@ -1,4 +1,4 @@
-package com.example.niki.berrybear;
+package com.example.niki.berrybear.Programming;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -15,19 +15,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.DragShadowBuilder;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.niki.berrybear.Programming.ProgramActivity;
+import com.example.niki.berrybear.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.niki.berrybear.R.id.list;
 import static com.example.niki.berrybear.R.id.textView;
 
 public class NewProgramActivity extends Activity {

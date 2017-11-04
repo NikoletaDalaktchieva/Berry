@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 
+import com.example.niki.berrybear.Tabs.HomeActivity;
+import com.example.niki.berrybear.Tabs.ListProgramsActivity;
+
 @SuppressWarnings("depreciation")
 public class MainActivity extends TabActivity {
 

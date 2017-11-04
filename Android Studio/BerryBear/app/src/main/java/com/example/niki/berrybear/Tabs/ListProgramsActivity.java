@@ -1,4 +1,4 @@
-package com.example.niki.berrybear;
+package com.example.niki.berrybear.Tabs;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.niki.berrybear.MainActivity;
+import com.example.niki.berrybear.Programming.ProgramActivity;
+import com.example.niki.berrybear.R;
 
 import java.util.List;
 
