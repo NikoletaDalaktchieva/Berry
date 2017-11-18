@@ -22,7 +22,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.niki.berrybear.Programming.ProgramActivity;
 import com.example.niki.berrybear.R;
 
 import java.util.ArrayList;
@@ -67,7 +66,7 @@ public class NewProgramActivity extends Activity {
         name.setText("Program");
 
         listSource.setAdapter(new ArrayAdapter<String>(
-                this, R.layout.commands_list_design, textView, comands));
+                this, R.layout.left_new_commands_list_design, textView, comands));
         /*String[] str = new String[]{"5s", "1s", "10s", "1s"};
         listSource.setAdapter(new CustomList(this, str, imageId));*/
 
@@ -82,7 +81,7 @@ public class NewProgramActivity extends Activity {
         //TODO: Get commands from database
 
         droppedAdapter = new ArrayAdapter<String>(
-                this, R.layout.new_commands_list_design, textView, droppedList);
+                this, R.layout.right_new_commands_list_design, textView, droppedList);
         listTarget.setAdapter(droppedAdapter);
 
         listSource.setOnDragListener(myDragEventListener);
