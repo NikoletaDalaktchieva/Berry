@@ -17,12 +17,10 @@ def index(request):
 
 
 @csrf_exempt
-def move(request):
+def direction(request):
     data = json.loads(request.body)
-    print data["direction"]
-    #TODO make function for moving the bear
-    return HttpResponse(data["direction"])
-    #return JsonResponse(data)
+    #move(data["direction"])
+    return JsonResponse(data)
 
 
 
@@ -43,13 +41,13 @@ def get_program_info(request):
     id = json.loads(request.body)
     info = Program.objects.get(id = id["id"])
 
-    data = {
+    response = {
         "id" : info.id,
         "name" : info.name,
         "commands" : info.commands
     }
 
-    return JsonResponse(data)
+    return JsonResponse(response)
 
 
 
@@ -67,6 +65,31 @@ def update_program_info(request):
 def run(request):
     id = (json.loads(request.body))["id"]
     commands = Program.objects.get(id= id).commands.split(" ")
+    response = []
     for c in commands:
+        response.append(
+            { "direction" : c})
+        #move(c)
         print c
-    return HttpResponse(id)
+    return JsonResponse(response, safe = False)
+
+
+@csrf_exempt
+def add(request):
+    data = json.loads(request.body)
+    new = Program(data["id"], data["name"], data["commands"])
+    new.save()
+    response = {
+        "id" : new.id, 
+        "name" : new.name,
+        "commands" : new.commands
+    }
+    return JsonResponse(response)
+
+
+@csrf_exempt
+def delete(request):
+    id = (json.loads(request.body))["id"]
+    Program.objects.get(id = id).delete();
+    return JsonResponse({})
+
