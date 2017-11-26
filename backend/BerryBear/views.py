@@ -11,20 +11,15 @@ from django.core import serializers
 
 # Create your views here.
 
-
-def index(request):
-    return HttpResponse("Berry Bear")
-
-
-@csrf_exempt
-def direction(request):
-    data = json.loads(request.body)
-    #move(data["direction"])
-    return JsonResponse(data)
+#@csrf_exempt
+#def direction(request):
+#    data = json.loads(request.body)
+#    #move(data["direction"])
+#    return JsonResponse(data)
 
 
 
-def get_programs_name(request):
+def names(request):
     programs = Program.objects.all()
 
     response = []
@@ -35,46 +30,7 @@ def get_programs_name(request):
                 })
     return JsonResponse(response, safe = False)
 
-
-@csrf_exempt
-def get_program_info(request):
-    id = json.loads(request.body)
-    info = Program.objects.get(id = id["id"])
-
-    response = {
-        "id" : info.id,
-        "name" : info.name,
-        "commands" : info.commands
-    }
-
-    return JsonResponse(response)
-
-
-
-
-@csrf_exempt
-def update_program_info(request):
-    new_info = json.loads(request.body)
-
-    Program.objects.filter(id = new_info["id"]).update(name = new_info["name"])
-    Program.objects.filter(id = new_info["id"]).update(commands = new_info["commands"])    
-
-    return HttpResponse("update")
-
-@csrf_exempt
-def run(request):
-    id = (json.loads(request.body))["id"]
-    commands = Program.objects.get(id= id).commands.split(" ")
-    response = []
-    for c in commands:
-        response.append(
-            { "direction" : c})
-        #move(c)
-        print c
-    return JsonResponse(response, safe = False)
-
-
-@csrf_exempt
+#TODO Remove id
 def add(request):
     data = json.loads(request.body)
     new = Program(data["id"], data["name"], data["commands"])
@@ -88,8 +44,61 @@ def add(request):
 
 
 @csrf_exempt
-def delete(request):
-    id = (json.loads(request.body))["id"]
-    Program.objects.get(id = id).delete();
+def programs (request):
+    if request.method == "GET":
+        return names(request)
+    elif request.method == "POST":
+        return add(request)
+
+    return HttpResponse(501)
+
+
+
+
+def program_info(program_id):
+    info = Program.objects.get(id = program_id)
+
+    response = {
+        "id" : info.id,
+        "name" : info.name,
+        "commands" : info.commands
+    }
+
+    return JsonResponse(response)
+
+def run(program_id):
+    commands = Program.objects.get(id= program_id).commands.split(" ")
+    response = []
+    for c in commands:
+        response.append(
+            { "direction" : c})
+        #move(c)
+        print c
+    return JsonResponse(response, safe = False)
+
+
+def update(request, program_id):
+    new_info = json.loads(request.body)
+
+    Program.objects.filter(id = program_id).update(name = new_info["name"])
+    Program.objects.filter(id = program_id).update(commands = new_info["commands"])    
+
+    return HttpResponse("update")
+
+def delete(program_id):
+    Program.objects.get(id = program_id).delete();
     return JsonResponse({})
 
+
+@csrf_exempt
+def info(request, program_id):
+    if request.method == "GET":
+        return program_info(program_id)
+    elif request.method == "POST":
+        return run(program_id)
+    elif request.method == "PUT":
+        return update(request, program_id)
+    elif request.method == "DELETE":
+        return delete(program_id)
+
+    return HttpResponse("Work")
